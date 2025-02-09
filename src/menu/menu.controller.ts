@@ -30,7 +30,7 @@ export class MenuController {
   // Database Operations
 
   // Get all menu items (only accessible to authenticated Chef)
-  @UseGuards(JwtAuthGuard)
+  // @UseGuards(JwtAuthGuard)
   //@UseGuards(AuthGuard)
   @Get()
   async getAllMenuItems() {
@@ -39,7 +39,7 @@ export class MenuController {
 
    // Get a specific menu item by ID (only accessible to authenticated Chef)
    //@UseGuards(AuthGuard)
-   @UseGuards(JwtAuthGuard)
+  //  @UseGuards(JwtAuthGuard)
    @Get('/:id')
    async getMenuItemById(@Param('id') id: number) {
      return await this.menuService.getMenuItemById(id);
@@ -47,7 +47,7 @@ export class MenuController {
  
    // Create a new menu item (only accessible to authenticated Chef)
    //@UseGuards(AuthGuard)
-   @UseGuards(JwtAuthGuard)
+  //  @UseGuards(JwtAuthGuard)
    @Post()
    async createMenuItem(@Body() createMenuDto: CreateMenuDto) {
      return await this.menuService.createMenuItem(createMenuDto);
@@ -55,7 +55,7 @@ export class MenuController {
  
    // Update an existing menu item (only accessible to authenticated Chef)
    //@UseGuards(AuthGuard)
-   @UseGuards(JwtAuthGuard)
+  //  @UseGuards(JwtAuthGuard)
    @Put(':id')
    async updateMenuItem(@Param('id') id: number, 
     @Body() updateMenuDto: UpdateMenuDto) {
@@ -64,7 +64,7 @@ export class MenuController {
  
    // Delete a menu item (only accessible to authenticated Chef)
    //@UseGuards(AuthGuard)
-   @UseGuards(JwtAuthGuard)
+  //  @UseGuards(JwtAuthGuard)
    @Delete(':id')
    async deleteMenuItem(@Param('id') id: number) {
      await this.menuService.deleteMenuItem(id);

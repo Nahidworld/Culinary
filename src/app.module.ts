@@ -29,8 +29,10 @@ import { ConfigModule } from '@nestjs/config';
       database: 'test',
       entities: [__dirname + '/**/*.entity{.ts,.js}'], // Load all entities dynamically
       synchronize: true,
-    }),ConfigModule.forRoot({
+    }),
+    ConfigModule.forRoot({
       isGlobal: true,  // Makes configuration available globally
+      envFilePath: '.env', // Specify the path to your .env file
     }),
     PassportModule.register({ defaultStrategy: 'jwt' }), 
     MenuModule,
@@ -43,6 +45,9 @@ import { ConfigModule } from '@nestjs/config';
     AuthModule, 
     UserModule,
     PassportModule.register({ session: true }),
+    UserModule,
+    AuthModule,
+    MenuModule,
   ],
 
   //imports: [RecipeModule, IncomeModule, MenuModule],
@@ -51,16 +56,16 @@ import { ConfigModule } from '@nestjs/config';
 })
 // export class AppModule {}
 export class AppModule {
-  configure(consumer: MiddlewareConsumer) {
-    consumer
-      .apply(
-        session({
-          secret: 'abc123', // Replace with a secure, random secret in production
-          resave: false,
-          saveUninitialized: false,
-          cookie: { maxAge: 3600000 }, // 1-hour cookie expiration
-        }),
-      )
-      .forRoutes('*'); // Apply session middleware globally
-  }
+  // configure(consumer: MiddlewareConsumer) {
+  //   consumer
+  //     .apply(
+  //       session({
+  //         secret: 'secret', // Replace with a secure, random secret in production
+  //         resave: false,
+  //         saveUninitialized: false,
+  //         cookie: { maxAge: 3600000 }, // 1-hour cookie expiration
+  //       }),
+  //     )
+  //     .forRoutes('*'); // Apply session middleware globally
+  // }
 }

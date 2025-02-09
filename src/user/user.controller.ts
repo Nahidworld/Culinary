@@ -55,7 +55,7 @@ import {
     @UseGuards(AuthGuard)
     @Get(':id')
     async getUserById(@Param('id') id: string) {
-      return this.userService.getUserById(+id);
+      return this.userService.getUserById(id);
     }
   }
   
