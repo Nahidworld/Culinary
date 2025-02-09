@@ -1,0 +1,11 @@
+Chef will log in.then he can add,update,delete recipe.
+In case of orders it will go to queue(feature) where chef
+ can edit update and delete queue and he can modify
+the status of the item in queue.Chief cannot do anything 
+without login.Chief can create,update,view , 
+edit today's special or daily menu.Chef can check 
+inventory for goods.CHef can recieve order of food checked in
+from menu .he can also edit ,update or delete order.
+
+
+1234567890!@#

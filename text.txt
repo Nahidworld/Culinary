@@ -1,0 +1,47 @@
+
+//3
+nest g module queue   
+nest g controller queue
+nest g service queue
+
+
+//4
+nest g module inventory  
+nest g controller inventory 
+nest g service inventory 
+
+//5
+nest g module order  
+nest g controller order 
+nest g service order 
+
+//6
+nest g module report  
+nest g controller report  
+nest g service report 
+
+//7
+nest g module feedback 
+nest g controller feedback   
+nest g service feedback  
+
+//auth
+nest g module auth 
+nest g controller auth   
+nest g service auth  
+
+//session
+npm install express-session
+npm install @types/express-session --save-dev
+
+//passport
+npm install @nestjs/passport passport
+npm install @types/passport --save-dev
+npm install passport-local
+npm install @types/passport-local --save-dev
+
+//bcrypt
+npm install bcrypt
+npm install @types/bcrypt --save-dev
+
+
